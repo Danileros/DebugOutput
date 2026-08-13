@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+
+        <RootNamespace>Tests</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TheLongDarkPath>C:\Program Files (x86)\Steam\steamapps\common\TheLongDark</TheLongDarkPath>
+        <MelonLoaderPath>$(TheLongDarkPath)\MelonLoader\net6</MelonLoaderPath>
+        <ManagedPath>$(TheLongDarkPath)\MelonLoader\Managed</ManagedPath>
+        <Il2CppPath>$(TheLongDarkPath)\MelonLoader\Il2CppAssemblies</Il2CppPath>
+        <ModsPath>$(TheLongDarkPath)\Mods</ModsPath>
+        <AssemblySearchPaths>$(AssemblySearchPaths);$(MelonLoaderPath);$(ManagedPath);$(Il2CppPath);$(ModsPath);</AssemblySearchPaths>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0"/>
+        <PackageReference Include="NUnit" Version="3.13.3"/>
+        <PackageReference Include="NUnit3TestAdapter" Version="4.2.1"/>
+        <PackageReference Include="NUnit.Analyzers" Version="3.3.0"/>
+        <PackageReference Include="coverlet.collector" Version="3.1.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DebugOutput\DebugOutput.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\Examples\DebugManagerProxy.cs">
+        <Link>DebugManagerProxy.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+</Project>
