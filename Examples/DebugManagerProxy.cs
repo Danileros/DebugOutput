@@ -80,7 +80,7 @@ public class DebugManagerProxy
             }
             else
             {
-                MelonLoader.MelonLogger.Error("DebugManager Proxy is disabled");
+                MelonLoader.MelonLogger.Msg("DebugManager Proxy is disabled");
             }
         }
         catch (Exception e)
