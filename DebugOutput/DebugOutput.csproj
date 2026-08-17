@@ -63,17 +63,9 @@
       <Compile Update="_Tests\Usings.cs">
         <Link>Tests\Usings.cs</Link>
       </Compile>
-      <Compile Update="_Tests\UnitTest1.cs">
-        <Link>Tests\UnitTest1.cs</Link>
+      <Compile Update="_Tests\ProxyTests.cs">
+        <Link>Tests\ProxyTests.cs</Link>
       </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="Release\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Release\**" />
     </ItemGroup>
 
     <ItemGroup>
