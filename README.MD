@@ -10,6 +10,8 @@ It assists in mod debugging by enabling a special debug mode that displays impor
 
 ## How-to
 
+### Straightforward usage
+
 The mod's interface is simple and designed to be similar to uConsole's interface while still handling most of the work. The simplest implementation requires adding just a few lines to OnInitializeMelon:
 
 ``` C#
@@ -20,7 +22,11 @@ And xyz is short name of your mod. My Long Largo, for example, names it "ll_debu
 
 However, this simplicity doesn't mean you should immediately add DebugOutput.dll to your dependencies and use its classes directly. You can, it's not prohibited, and it will work, but I don't consider it a proper implementation.
 
+### Dependencies problem
+
 The thing is, I'm against using dependencies in mods where it's possible to avoid them. A dependency is always a trade-off, and not always a good one. When you add a dependency to your code, you inherit both the mod's benefits and its drawbacks. If the dependency is buggy, your code is buggy. If the dependency has functionality that interferes with yours, you have to accept it. If the dependency is outdated, your mod is outdated. The developer of the dependency has their own perspective on development and their own interests, which don't always align with yours. By adding dependencies to your mod, you enter into this trade-off, and worse, you force the player to enter into this trade-off as well. After all, they won't be able to play your mod without installing the mods you depend on. In this sense, DebugOutput is special because it's designed for you, the developer. Players shouldn't need to debug your mods.
+
+### Optional Dependency
 
 Luckily, I have a solution! It's right here, in the [Examples](https://github.com/Danileros/DebugOutput/Examples/DebugManagerProxy.cs) folder. This is a proxy class that loads DebugOutput without requiring you to add this mod to the References list. You don't even need to specify DebugOutput as a dependency—if it's installed in the Mods folder, the debugging functionality will work. If this mod isn't in the Mods folder, no problem—the debugging functionality will simply be disabled. No exceptions will be thrown; the debug command simply won't appear in the console commands list, and the debug output rendering function will never be called. This functionality is reliable and well-optimized.
 
