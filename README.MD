@@ -28,7 +28,7 @@ The thing is, I'm against using dependencies in mods where it's possible to avoi
 
 ### Optional Dependency
 
-Luckily, I have a solution! It's right here, in the [Examples](https://github.com/Danileros/DebugOutput/Examples/DebugManagerProxy.cs) folder. This is a proxy class that loads DebugOutput without requiring you to add this mod to the References list. You don't even need to specify DebugOutput as a dependency—if it's installed in the Mods folder, the debugging functionality will work. If this mod isn't in the Mods folder, no problem—the debugging functionality will simply be disabled. No exceptions will be thrown; the debug command simply won't appear in the console commands list, and the debug output rendering function will never be called. This functionality is reliable and well-optimized.
+Luckily, I have a solution! It's right here, in the [Examples](https://github.com/Danileros/DebugOutput/blob/main/Examples/DebugManagerProxy.cs) folder. This is a proxy class that loads DebugOutput without requiring you to add this mod to the References list. You don't even need to specify DebugOutput as a dependency—if it's installed in the Mods folder, the debugging functionality will work. If this mod isn't in the Mods folder, no problem—the debugging functionality will simply be disabled. No exceptions will be thrown; the debug command simply won't appear in the console commands list, and the debug output rendering function will never be called. This functionality is reliable and well-optimized.
 
 Simply copy-paste it to your mod and use. Add `public static DebugManagerProxy DebugManager = new();` to your `MelonMod`/`MelonPlugin` class. And the Just use it in a similar way.
 
